@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Marble statue AI cutout quality gate</title><style>body{font:16px system-ui;background:#cac2b4;padding:30px}section{display:flex;gap:20px}.panel{width:42%;padding:18px;background:linear-gradient(90deg,#ba997f 0 50%,#dcd2c5 50% 100%)}img{width:100%;max-height:640px;object-fit:contain}.progress{padding:16px;background:white;position:sticky;top:0;z-index:100;font:15px monospace;white-space:pre-wrap}</style></head><body><div id="report" class="progress">Starting model and downloading AI image-matting assets...</div><h1>AI cutout visual QC — original marble statue, no substitution</h1><section><div class="panel"><h2>Original source</h2><img id="original" crossorigin="anonymous" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png"></div><div class="panel"><h2>AI matte against two contrasting background colors</h2><img id="result"></div></section>
+<script type="module">
+const report=document.querySelector('#report');const set=s=>{report.textContent=s;window.__cutoutStatus=s};const u="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png";
+window.addEventListener('error',e=>set("ERROR "+e.message));
+window.addEventListener('unhandledrejection',e=>set("REJECTION "+String(e.reason)));
+try {
+set("LOADING ESM module from CDN...");
+const mod=await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm");
+set("MODULE loaded; exports: "+Object.keys(mod).join(", ")+"\nStarting removeBackground...");
+const removeBackground=mod.removeBackground||mod.default;
+const blob=await removeBackground(u,{model:'isnet',output:{format:'image/png'},progress:(key,c,t)=>set("Model asset download: "+key+" "+Math.round(c/t*100)+"%")});
+set("DONE; blob bytes: "+blob.size+"; type:"+blob.type);const o=URL.createObjectURL(blob);document.querySelector('#result').src=o;window.__cutoutBlob=o;
+} catch(e){set("ERROR "+e.name+": "+e.message);};
+</script></body></html>
