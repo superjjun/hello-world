@@ -1,0 +1,258 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BEYOND THE FRAME — THREE-DIMENSIONAL MUSEUM SCENES</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#aaa8a5;color:#382d24;font-family:'Noto Sans KR',sans-serif}
+.master{width:6010px;padding:55px 50px 84px;background:#a9a7a4}
+.board-label{font:500 24px 'Cormorant Garamond';letter-spacing:4px;margin:0 0 20px 4px;color:#47413a}
+.board{background:#f8f6f2;padding:37px;display:grid;grid-template-columns:repeat(4,1440px);grid-template-rows:repeat(2,900px);gap:15px;width:max-content;box-shadow:0 12px 50px #42382a26}
+.screen{width:1440px;height:900px;position:relative;overflow:hidden;background:#bdad9b;isolation:isolate;box-shadow:0 6px 17px #372a1e35}
+.environment{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+.ambient-light{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 53% 12%,#fff4d073 0%,#edce9240 27%,transparent 62%),linear-gradient(180deg,#120d0a17 0%,transparent 39%,#38251538 100%)}
+.darkfall{position:absolute;inset:0;background:linear-gradient(90deg,#1f1918dc,#241e1aac 37%,#493d318c 70%,#221915ac)}
+.left-column,.right-column{position:absolute;top:-60px;width:112px;height:1010px;background:linear-gradient(90deg,#241e1a,#806952 35%,#b89b76 53%,#513c2e 82%,#241c16);opacity:.48;box-shadow:18px 3px 28px #251b165c;filter:blur(1px)}
+.left-column{left:14px}.right-column{right:2px;transform:scaleX(-1)}
+.lit-arch-frame{position:absolute;border-radius:265px 265px 0 0;border:18px solid #d9c1a09a;box-shadow:0 0 56px #f5d7a7bb,inset 0 0 54px #fff8dd8c;opacity:.8}
+.arch-center-light{position:absolute;left:585px;top:121px;width:310px;height:660px;border-radius:170px 170px 0 0;background:linear-gradient(180deg,#fff6dfd4,#faebc2a4 30%,#f5dabc1a 80%);filter:blur(20px);box-shadow:0 0 95px 33px #fff4c494}
+.floor-reflection{position:absolute;left:280px;right:230px;bottom:-40px;height:240px;background:radial-gradient(ellipse at 50% 0%,#f3deac65,transparent 71%);filter:blur(16px)}
+.foreground-statue{z-index:4}
+.intro-copy{position:absolute;z-index:8;text-align:center;left:462px;top:155px;width:540px;color:#f5e9d7;text-shadow:0 2px 12px #4e3b2b67}
+.kicker{font-size:13px;letter-spacing:4px;font-weight:500;color:#e5c49a}
+.hero-brand{font:500 100px/.88 'Cormorant Garamond',serif;margin-top:85px;letter-spacing:-4px}
+.hero-line{width:60px;height:1px;margin:46px auto 28px;background:#e7d0b4}
+.hero-ko{font:500 24px/1.65 'Noto Serif KR',serif}
+.circle-enter{margin:40px auto 0;width:160px;height:58px;border:1px solid #e4cda7b9;border-radius:35px;display:flex;align-items:center;justify-content:center;letter-spacing:2px;font-size:13px}
+.under-note{position:absolute;bottom:95px;right:70px;letter-spacing:3px;font-size:11px;color:#f2dac0;z-index:9}
+.navbar{position:absolute;top:0;left:0;right:0;height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;z-index:30;border-bottom:1px solid #ffffff28}
+.navlight{color:#fff4e8;text-shadow:0 1px 8px #36241ac7}.navdark{color:#594638;text-shadow:0 1px 6px #fff9dc81;border-bottom-color:#56452d24}
+.navbar .brand{font:600 27px 'Cormorant Garamond',serif;letter-spacing:.8px}
+.links{display:flex;gap:34px;margin-left:240px;font-size:11px;letter-spacing:2.1px;font-weight:500}
+.links span{opacity:.8}.links .on{opacity:1;font-weight:700}
+.navicons{display:flex;gap:30px;font-size:23px;align-items:center}
+.deep-shadow{position:absolute;inset:0;background:linear-gradient(90deg,#272017a9,transparent 32%,transparent 69%,#2e211996),linear-gradient(180deg,#20191247,transparent 33%,#3223198a)}
+.sun-volumetric{position:absolute;left:160px;top:0;width:1100px;height:850px;background:conic-gradient(from 144deg at 50% 10%,transparent 0deg,#ffdfac34 21deg,transparent 32deg,transparent 123deg,#ffe1b52d 143deg,transparent 157deg);mix-blend-mode:screen}
+.home-light{left:545px;top:94px;width:410px;height:728px;opacity:.65;filter:blur(27px)}
+.floating-sign{position:absolute;z-index:11;left:468px;top:146px;width:505px;height:632px;border:11px solid #dbc39b;border-radius:244px 244px 8px 8px;text-align:center;background:radial-gradient(ellipse at 50% 40%,#fff6e2e8,#c6a681d4);box-shadow:0 0 34px #fff0cdbc,inset 0 0 34px #f9e8ca,26px 29px 47px #2d211781;color:#4a3628;padding-top:116px}
+.floating-sign-small{font-size:12px;letter-spacing:2px}
+.floating-sign h2{font:500 85px/.91 'Cormorant Garamond',serif;margin:42px 0 0;letter-spacing:-2px}
+.tiny-rule{width:65px;height:1px;background:#977455;margin:35px auto}
+.floating-sign p{font:500 21px/1.6 'Noto Serif KR';margin:20px auto}
+.sign-enter{margin:32px auto 0;background:#49372a;color:#fff7ed;padding:16px 27px;display:inline-block;letter-spacing:2px;font-size:11px}
+.marble{z-index:11;object-fit:contain}
+.plinth-3d{position:absolute;z-index:9;background:linear-gradient(90deg,#9c8270,#e7d7c0 30%,#ad9783 80%,#84715f);box-shadow:20px 18px 26px #2f20194f,inset -12px 0 18px #5e4a3054;transform-style:preserve-3d}
+.plinth-top{position:absolute;top:-20px;left:-10px;right:-10px;height:26px;background:linear-gradient(120deg,#e4d6c3,#f7ebd7,#bda58b);transform:skew(-27deg);border:1px solid #a68d74}
+.plinth-side{position:absolute;right:-20px;top:0;bottom:0;width:21px;background:linear-gradient(90deg,#73604d,#ab9075);transform:skewY(-35deg);transform-origin:top left}
+.ped-label{position:absolute;bottom:56px;left:0;right:0;text-align:center;color:#4f4233;font:600 12px 'Noto Sans KR';letter-spacing:1px}
+.footline{position:absolute;z-index:34;bottom:0;height:35px;left:0;right:0;padding:0 35px;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1.4px;color:#fff4e6e8;background:linear-gradient(90deg,#382d27a1,#2e251f80)}
+.creamwash{position:absolute;inset:0;background:linear-gradient(180deg,#f7ebdaed,#ead1b69c 65%,#5746334c);backdrop-filter:blur(1px)}
+.lobby-header{position:absolute;z-index:15;top:107px;width:100%;text-align:center;color:#5a4636}
+.lobby-header>span{font-size:11px;letter-spacing:3px;color:#927254}
+.lobby-header h2{font:500 80px 'Cormorant Garamond';margin:13px 0 0}
+.lobby-header p{font-size:17px;margin-top:-6px}
+.portal-wrap{position:absolute;z-index:19;top:313px;width:338px;height:510px;filter:drop-shadow(17px 22px 20px #4938274e)}
+.portal-arch{position:absolute;inset:0;border-radius:172px 172px 3px 3px;border:12px solid #b6a086;overflow:hidden;box-shadow:inset 0 0 23px #33251471,0 0 0 6px #d2c4ad,0 19px 26px #33271671;background:#ddd0bc}
+.portal-photo{position:absolute;width:100%;height:100%;object-fit:cover;filter:sepia(.49) saturate(.6) brightness(.7);transform:scale(1.25)}
+.portal-light{position:absolute;inset:0;background:linear-gradient(180deg,#f8e5ca81,#ead1a824 55%,#3e2f2482)}
+.portal-plinth{position:absolute;left:49px;top:134px;width:248px;height:310px;filter:drop-shadow(13px 20px 12px #3e2f2a8c)}
+.portal-text{position:absolute;bottom:7px;left:12px;right:12px;height:163px;background:linear-gradient(180deg,#fff8ead6,#e2ccacfa);text-align:center;color:#4f3d2e;padding:18px;border:1px solid #d7ba90}
+.portal-index{font:600 31px 'Cormorant Garamond'}
+.portal-label{font:500 19px 'Noto Serif KR';margin-top:1px}
+.portal-sub{font-size:10px;letter-spacing:2px;margin-top:9px}
+.portal-action{font-size:12px;margin-top:8px;letter-spacing:2px}
+.lobby-side-note{position:absolute;right:40px;bottom:59px;font-size:10px;letter-spacing:1.8px;color:#584533}
+.gallery-color{position:absolute;inset:0;background:linear-gradient(90deg,#2b241bac 0%,#4f3e2973 29%,transparent 68%,#2c201a7a),linear-gradient(180deg,#1b130e69,transparent 30%,#22180e7f)}
+.gallery-copy{position:absolute;z-index:18;left:81px;top:166px;color:#f4e8d5;text-shadow:0 2px 8px #1c140e79}
+.chapter{font-size:11px;letter-spacing:3px;color:#dfc39f}
+.gallery-copy h2{font:500 89px 'Cormorant Garamond';margin:24px 0 -2px;letter-spacing:-1px}
+.gallery-copy p{font:400 21px 'Noto Serif KR'}
+.gallery-category{font-size:12px;letter-spacing:2px;display:block;margin-top:70px;border-left:2px solid #ead2aa;padding-left:15px}
+.museum-label{position:absolute;right:50px;top:133px;font-size:11px;color:#f1ddbd;letter-spacing:2px}
+.spotlight{position:absolute;z-index:5;border-radius:50%;background:radial-gradient(ellipse,#fff4d654 0%,#f4e0ae25 35%,transparent 71%);filter:blur(11px)}
+.contactshadow{position:absolute;height:61px;border-radius:50%;background:#30211875;filter:blur(13px);z-index:8}
+.circleprev,.circlenext{position:absolute;z-index:26;bottom:98px;width:61px;height:61px;line-height:50px;text-align:center;border-radius:50%;border:1px solid #ead7bb8c;background:#2119147a;color:#fff6df;font:400 50px 'Cormorant Garamond'}
+.circleprev{left:49px}.circlenext{right:49px}
+.little-dots{position:absolute;z-index:25;bottom:119px;left:0;right:0;text-align:center;font-size:10px;color:#e5d6bc;letter-spacing:5px}
+.floor-track{position:absolute;z-index:12;bottom:48px;left:0;right:0;height:90px;background:linear-gradient(180deg,transparent,#f2dcc424);pointer-events:none}
+.archive-wash{position:absolute;inset:0;background:linear-gradient(150deg,#f7ecdcf0,#e0cbb5ef 68%,#977b5ec4);backdrop-filter:blur(3px)}
+.archive-copy{position:absolute;z-index:12;left:68px;top:105px}
+.archive-copy h2{font:500 79px 'Cormorant Garamond';margin:0 0 -6px}
+.archive-copy p{font:400 17px 'Noto Serif KR';color:#755b49}
+.archive-search{position:absolute;right:69px;top:163px;width:288px;border-bottom:1px solid #ac9175;padding-bottom:14px;font-size:12px;color:#725745;text-align:right;z-index:20}
+.archive-grid{position:absolute;top:308px;left:63px;right:63px;bottom:58px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(3,1fr);gap:15px}
+.artist-cell{background:linear-gradient(135deg,#f5e5d0,#d5b79c);box-shadow:7px 9px 14px #76594146;position:relative;border:1px solid #c9b49a;overflow:hidden}
+.artist-stage{height:118px;margin:8px 10px 0;position:relative;background:radial-gradient(ellipse at 52% 11%,#fff5d1,#d9c4ae 76%,#ae9277);overflow:hidden}
+.artist-light{position:absolute;inset:0;background:linear-gradient(90deg,#fff6e73c,transparent 35%,#33251d1e)}
+.artist-stage .marble{position:absolute;z-index:4;left:0;top:-5px}
+.artist-tiny-plinth{position:absolute;bottom:-25px;left:19%;right:19%;height:38px;background:linear-gradient(90deg,#977960,#ead7bd,#a48d75);box-shadow:7px 9px 8px #3d2c2164}
+.artist-meta{display:flex;justify-content:space-between;padding:12px 13px;color:#594330;font-size:12px}
+.artist-meta strong{font-size:13px;font-weight:600}
+.artist-meta span{font-size:10px;color:#86674d}
+.detail-ombre{position:absolute;inset:0;background:linear-gradient(90deg,#2e1f1894,#583c2961 48%,#e3cfb9b6 70%,#e4cbb7cc)}
+.detail-halo{position:absolute;left:-180px;top:-160px;width:950px;height:960px;background:radial-gradient(ellipse,#faf2d754,transparent 68%);filter:blur(11px)}
+.detail-paper{position:absolute;z-index:16;right:86px;top:142px;width:518px;height:660px;background:linear-gradient(137deg,#fffaeeef,#f0dcc6f0);box-shadow:30px 32px 44px #2f211858,0 0 0 1px #d4bca2;padding:50px 53px;color:#4d392b}
+.detail-kicker{font-size:11px;letter-spacing:3px;color:#977b5e}
+.detail-paper h2{font:500 87px/.88 'Cormorant Garamond';margin:25px 0 30px}
+.detail-rule{width:58px;height:1px;background:#bb9972;margin:29px 0 34px}
+.detail-paper h3{font:600 21px 'Noto Serif KR';margin-bottom:24px}
+.detail-paper p{font-size:15px;line-height:2;color:#725746;margin:0}
+.detail-cta{position:absolute;bottom:50px;left:52px;right:52px;background:#453023;color:#fff2e3;text-align:center;padding:18px;font-size:13px;letter-spacing:1px}
+.detail-next{position:absolute;z-index:18;left:48px;bottom:77px;color:#f9e6ca;font-size:12px;letter-spacing:2px;right:720px}
+.detail-next span{float:right}
+</style></head><body><main class="master"><div class="board-label">BEYOND THE FRAME &nbsp;/&nbsp; 2026 VIRTUAL EXHIBITION</div><div class="board">
+
+<section class="screen three-d" data-screen="01">
+<img class="environment" src="https://cdn.sanity.io/images/cctd4ker/production/db9d9d374eb7ed521854067c04a3695d8d6044a6-5120x2880.jpg?auto=format&fit=clip&q=85&w=2000" loading="eager" style="filter:sepia(.52) saturate(.64) brightness(.54) contrast(.98);transform:scale(1.12);"><div class="ambient-light"></div>
+<div class="darkfall"></div><div class="left-column"></div><div class="right-column"></div>
+<div class="floor-reflection"></div><div class="lit-arch-frame" style="left:480px;top:66px;width:506px;height:740px"></div>
+<div class="arch-center-light"></div>
+<img class="marble foreground-statue" crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="position:absolute;left:-80px;bottom:-137px;width:490px;height:885px;object-fit:contain;filter:sepia(.26) drop-shadow(20px 32px 23px #251b17ad);">
+<div class="intro-copy">
+<div class="kicker">2026 · VR GRADUATION EXHIBITION</div>
+<div class="hero-brand">BEYOND<br>THE FRAME</div>
+<div class="hero-line"></div>
+<div class="hero-ko">프레임을 넘어,<br>우리를 만나다</div>
+<div class="circle-enter">ENTER　 ↗</div>
+</div>
+<div class="under-note">A NEW WAY OF SEEING ART</div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>01 / 08</span></div>
+</section>
+<section class="screen three-d" data-screen="02">
+<img class="environment" src="https://www.aarome.org/sites/default/files/inline-images/Rose.jpg" loading="eager" style="filter:sepia(.48) brightness(.65) saturate(.73);transform:scale(1.06)"><div class="ambient-light"></div>
+<div class="deep-shadow"></div><div class="sun-volumetric"></div><div class="navbar navlight"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="on">HOME</span><span class="">GALLERY</span><span class="">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="arch-center-light home-light"></div>
+<div class="floating-sign">
+<div class="floating-sign-small">2026 VISUAL DESIGN GRADUATION EXHIBITION</div>
+<h2>BEYOND<br>THE FRAME</h2>
+<div class="tiny-rule"></div><p>프레임을 넘어,<br>우리를 만나다</p>
+<div class="sign-enter">ENTER EXHIBITION　 →</div></div>
+<div class="plinth-3d" style="left:84px;top:545px;width:210px;height:258px;transform:perspective(1400px) rotateY(-5deg) scale(0.96)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div><img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="position:absolute;left:50px;top:245px;width:304px;height:352px;">
+<div class="plinth-3d" style="left:1110px;top:568px;width:205px;height:246px;transform:perspective(1400px) rotateY(-5deg) scale(0.9)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div><img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="position:absolute;left:1070px;top:250px;width:268px;height:354px;filter:sepia(.14) drop-shadow(-20px 17px 11px #291e1766)">
+<div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>02 / 08</span></div>
+</section>
+<section class="screen three-d" data-screen="03">
+<img class="environment" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Interior%2C_Glyptothek_Munich_-_DSC07346.JPG/960px-Interior%2C_Glyptothek_Munich_-_DSC07346.JPG" loading="eager" style="filter:sepia(.50) saturate(.65) brightness(1.12) contrast(.83);"><div class="ambient-light"></div>
+<div class="creamwash"></div><div class="navbar navdark"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="on">GALLERY</span><span class="">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="lobby-header"><span>SELECT A ROOM / 관람 공간 선택</span><h2>Choose your gallery.</h2><p>하나의 공간, 서로 다른 세 가지 예술의 세계</p></div>
+
+<div class="portal-wrap" style="left:122px">
+<div class="portal-arch"><img class="portal-photo" src="https://www.aarome.org/sites/default/files/inline-images/Rose.jpg" loading="eager"><div class="portal-light"></div></div>
+<div class="portal-plinth"><img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="width:100%;height:318px;object-fit:contain"></div>
+<div class="portal-text"><div class="portal-index">GALLERY 01</div><div class="portal-label">조형</div><div class="portal-sub">FORM & SCULPTURE</div><div class="portal-action">ENTER　↗</div></div>
+</div>
+<div class="portal-wrap" style="left:550px">
+<div class="portal-arch"><img class="portal-photo" src="https://support.hermitagemuseum.org/storage/static/f5e2eced85786393a14d6be4c8fbe992_1641814904_1241724030.jpeg" loading="eager"><div class="portal-light"></div></div>
+<div class="portal-plinth"><img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="width:100%;height:318px;object-fit:contain"></div>
+<div class="portal-text"><div class="portal-index">GALLERY 02</div><div class="portal-label">미디어</div><div class="portal-sub">MEDIA & ART</div><div class="portal-action">ENTER　↗</div></div>
+</div>
+<div class="portal-wrap" style="left:980px">
+<div class="portal-arch"><img class="portal-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Interior%2C_Glyptothek_Munich_-_DSC07346.JPG/960px-Interior%2C_Glyptothek_Munich_-_DSC07346.JPG" loading="eager"><div class="portal-light"></div></div>
+<div class="portal-plinth"><img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="width:100%;height:318px;object-fit:contain"></div>
+<div class="portal-text"><div class="portal-index">GALLERY 03</div><div class="portal-label">공간 / 설치</div><div class="portal-sub">SPACE & INSTALLATION</div><div class="portal-action">ENTER　↗</div></div>
+</div>
+<div class="lobby-side-note">EVERY ROOM HAS ITS OWN STORY　↗</div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>03 / 08</span></div>
+</section><section class="screen three-d" data-screen="04">
+<img class="environment" src="https://www.aarome.org/sites/default/files/inline-images/Rose.jpg" loading="eager" style="filter:sepia(.46) saturate(.54) brightness(.86);transform:scale(1.08)"><div class="ambient-light"></div>
+<div class="gallery-color"></div><div class="ambient-lines"></div><div class="navbar navlight"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="on">GALLERY</span><span class="">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="gallery-copy"><div class="chapter">EXHIBITION SPACE / 01</div><h2>GALLERY 01</h2><p>조각의 시작, 이야기가 되다</p><span class="gallery-category">FORM / 조형</span></div>
+<div class="museum-label">SCULPTURAL EXPERIENCE　 /　 3D VIEW</div>
+
+<div class="spotlight" style="left:475px;top:100px;width:685px;height:708px"></div>
+<div class="contactshadow" style="left:595px;top:712px;width:340px"></div>
+<div class="plinth-3d" style="left:665px;top:678px;width:270px;height:255px;transform:perspective(1400px) rotateY(-5deg) scale(0.92)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div>
+<img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="position:absolute;left:630px;top:260px;width:375px;height:438px;filter:sepia(.14) contrast(1.04) drop-shadow(25px 20px 13px #30231985)">
+
+<img class="marble " crossorigin="anonymous" data-sculpture="3" src="https://images.rawpixel.com/image_png_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl9ncmVla19zdGF0dWVfcG9ydHJhaXRfc3RvbmVfdGV4dHVyZV82YjhiYmFhOS1hYzI0LTQ4Y2EtOTVlZS1iNTg1MmU5ZmE1ODMucG5n.png" loading="eager" style="position:absolute;left:1070px;top:430px;width:215px;height:245px;filter:sepia(.4) brightness(.84) drop-shadow(13px 16px 9px #3d2c236a)">
+<div class="plinth-3d" style="left:1100px;top:656px;width:166px;height:195px;transform:perspective(1400px) rotateY(-5deg) scale(1)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label">STUDENT WORK</span></div>
+<div class="circleprev">‹</div><div class="circlenext">›</div><div class="little-dots">● &nbsp; ● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+<div class="floor-track"></div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>04 / 08</span></div>
+</section><section class="screen three-d" data-screen="05">
+<img class="environment" src="https://support.hermitagemuseum.org/storage/static/f5e2eced85786393a14d6be4c8fbe992_1641814904_1241724030.jpeg" loading="eager" style="filter:sepia(.46) saturate(.54) brightness(.80);transform:scale(1.08)"><div class="ambient-light"></div>
+<div class="gallery-color"></div><div class="ambient-lines"></div><div class="navbar navlight"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="on">GALLERY</span><span class="">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="gallery-copy"><div class="chapter">EXHIBITION SPACE / 02</div><h2>GALLERY 02</h2><p>예술로 마주하는 다양한 시선</p><span class="gallery-category">MEDIA / 미디어</span></div>
+<div class="museum-label">SCULPTURAL EXPERIENCE　 /　 3D VIEW</div>
+
+<div class="spotlight" style="left:530px;top:110px;width:640px;height:690px"></div>
+<div class="contactshadow" style="left:650px;top:719px;width:325px"></div>
+<div class="plinth-3d" style="left:720px;top:685px;width:255px;height:255px;transform:perspective(1400px) rotateY(-5deg) scale(0.92)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div>
+<img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="position:absolute;left:685px;top:270px;width:330px;height:420px;filter:sepia(.14) contrast(1.04) drop-shadow(25px 20px 13px #30231985)">
+
+<img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="position:absolute;left:1070px;top:430px;width:215px;height:245px;filter:sepia(.4) brightness(.84) drop-shadow(13px 16px 9px #3d2c236a)">
+<div class="plinth-3d" style="left:1100px;top:656px;width:166px;height:195px;transform:perspective(1400px) rotateY(-5deg) scale(1)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label">STUDENT WORK</span></div>
+<div class="circleprev">‹</div><div class="circlenext">›</div><div class="little-dots">● &nbsp; ● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+<div class="floor-track"></div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>05 / 08</span></div>
+</section><section class="screen three-d" data-screen="06">
+<img class="environment" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Interior%2C_Glyptothek_Munich_-_DSC07346.JPG/960px-Interior%2C_Glyptothek_Munich_-_DSC07346.JPG" loading="eager" style="filter:sepia(.46) saturate(.54) brightness(.86);transform:scale(1.08)"><div class="ambient-light"></div>
+<div class="gallery-color"></div><div class="ambient-lines"></div><div class="navbar navlight"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="on">GALLERY</span><span class="">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="gallery-copy"><div class="chapter">EXHIBITION SPACE / 03</div><h2>GALLERY 03</h2><p>예술의 미래를 여는 또 하나의 공간</p><span class="gallery-category">SPACE / 공간·설치</span></div>
+<div class="museum-label">SCULPTURAL EXPERIENCE　 /　 3D VIEW</div>
+
+<div class="spotlight" style="left:445px;top:80px;width:695px;height:728px"></div>
+<div class="contactshadow" style="left:565px;top:720px;width:360px"></div>
+<div class="plinth-3d" style="left:635px;top:686px;width:290px;height:255px;transform:perspective(1400px) rotateY(-5deg) scale(0.92)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div>
+<img class="marble " crossorigin="anonymous" data-sculpture="4" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV93aGl0ZV9tYW5fcm9tYW5fc3RhdHVlX19pc29sYV8yZGNkNjJiMy0wNmQ4LTRmMDctODFiYS0zZGE2MDM2MjViYjAucG5n.png" loading="eager" style="position:absolute;left:600px;top:240px;width:385px;height:458px;filter:sepia(.14) contrast(1.04) drop-shadow(25px 20px 13px #30231985)">
+
+<img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="position:absolute;left:1070px;top:430px;width:215px;height:245px;filter:sepia(.4) brightness(.84) drop-shadow(13px 16px 9px #3d2c236a)">
+<div class="plinth-3d" style="left:1100px;top:656px;width:166px;height:195px;transform:perspective(1400px) rotateY(-5deg) scale(1)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label">STUDENT WORK</span></div>
+<div class="circleprev">‹</div><div class="circlenext">›</div><div class="little-dots">● &nbsp; ● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+<div class="floor-track"></div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>06 / 08</span></div>
+</section><section class="screen three-d" data-screen="07">
+<img class="environment" src="https://www.botta.ch/Data/Images/botta/85/4%20Museo%20Vela%20foto%20Enrico%20Cano.jpg" loading="eager" style="filter:sepia(.43) brightness(1.12) saturate(.55);transform:scale(1.07)"><div class="ambient-light"></div>
+<div class="archive-wash"></div><div class="navbar navdark"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="">GALLERY</span><span class="on">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="archive-copy"><div class="chapter" style="color:#a08062">STUDENT ARTISTS / 2026</div><h2>The Artists.</h2><p>열다섯 명의 이야기, 열다섯 개의 시선</p></div>
+<div class="archive-search">작가 이름 검색　 ⌕</div>
+<div class="archive-grid"><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>김서연</strong><span>조형　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>이도현</strong><span>조형　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>박지현</strong><span>조형　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="3" src="https://images.rawpixel.com/image_png_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl9ncmVla19zdGF0dWVfcG9ydHJhaXRfc3RvbmVfdGV4dHVyZV82YjhiYmFhOS1hYzI0LTQ4Y2EtOTVlZS1iNTg1MmU5ZmE1ODMucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>정유진</strong><span>조형　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="4" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV93aGl0ZV9tYW5fcm9tYW5fc3RhdHVlX19pc29sYV8yZGNkNjJiMy0wNmQ4LTRmMDctODFiYS0zZGE2MDM2MjViYjAucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>최민수</strong><span>조형　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>한예슬</strong><span>미디어　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>오준호</strong><span>미디어　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>이수빈</strong><span>미디어　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="3" src="https://images.rawpixel.com/image_png_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl9ncmVla19zdGF0dWVfcG9ydHJhaXRfc3RvbmVfdGV4dHVyZV82YjhiYmFhOS1hYzI0LTQ4Y2EtOTVlZS1iNTg1MmU5ZmE1ODMucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>김도하</strong><span>미디어　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="4" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV93aGl0ZV9tYW5fcm9tYW5fc3RhdHVlX19pc29sYV8yZGNkNjJiMy0wNmQ4LTRmMDctODFiYS0zZGE2MDM2MjViYjAucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>박시온</strong><span>미디어　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>조아영</strong><span>공간 / 설치　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="1" src="https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA2L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV9ncmVla19nb2RkZXNzX3N0YXR1ZV9pc29sYXRlZF80NDkwZDBjMS1hODU3LTQ2NjUtOTBjNy02YzkwOTdmYzdlNjcucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>정유리</strong><span>공간 / 설치　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="2" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA5L3Jhd3BpeGVsX29mZmljZV8zNV9oaWdoX2FuZ2xlX2Zyb250X3ZpZXdfcGhvdG9fb2ZfYV9yZWFsX2NsYXNzaV9kN2I5ZDliOC04NjAxLTQyZTQtYWYxYS04YzYyNGJjMWUwMDkucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>이하은</strong><span>공간 / 설치　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="3" src="https://images.rawpixel.com/image_png_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl9ncmVla19zdGF0dWVfcG9ydHJhaXRfc3RvbmVfdGV4dHVyZV82YjhiYmFhOS1hYzI0LTQ4Y2EtOTVlZS1iNTg1MmU5ZmE1ODMucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>유서진</strong><span>공간 / 설치　↗</span></div></div><div class="artist-cell"><div class="artist-stage"><div class="artist-light"></div><div class="artist-tiny-plinth"></div><img class="marble " crossorigin="anonymous" data-sculpture="4" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA3L3N0YXJ0dXBpbWFnZXNfY2xvc2VfdXBfcGhvdG9fb2ZfYV93aGl0ZV9tYW5fcm9tYW5fc3RhdHVlX19pc29sYV8yZGNkNjJiMy0wNmQ4LTRmMDctODFiYS0zZGE2MDM2MjViYjAucG5n.png" loading="eager" style="width:100%;height:100%;object-fit:contain;filter:sepia(.21) contrast(1.1) drop-shadow(7px 9px 4px #4935225b)"></div><div class="artist-meta"><strong>한지후</strong><span>공간 / 설치　↗</span></div></div></div>
+<div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>07 / 08</span></div>
+</section>
+<section class="screen three-d" data-screen="08">
+<img class="environment" src="https://static.wixstatic.com/media/15b084_f516ac10bb124b7db4479a6473eaf60d~mv2.jpeg/v1/fill/w_1000%2Ch_750%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01/15b084_f516ac10bb124b7db4479a6473eaf60d~mv2.jpeg" loading="eager" style="filter:sepia(.55) brightness(.85) contrast(.92);transform:scale(1.12)"><div class="ambient-light"></div>
+<div class="detail-ombre"></div><div class="navbar navlight"><span class="brand">BEYOND THE FRAME</span><div class="links"><span class="">HOME</span><span class="">GALLERY</span><span class="on">LIST</span><span>ABOUT</span></div><div class="navicons"><span>⌕</span><span>☰</span></div></div>
+<div class="detail-halo"></div>
+<div class="plinth-3d" style="left:139px;top:704px;width:535px;height:223px;transform:perspective(1400px) rotateY(-5deg) scale(1.08)"><span class="plinth-top"></span><span class="plinth-side"></span><span class="ped-label"></span></div>
+<img class="marble " crossorigin="anonymous" data-sculpture="0" src="https://images.rawpixel.com/dark_image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI2LTAzL3NyLWltYWdlLTE4MDMyMDI2LWFtMDctcy0xNDItbW40ZjYwc2cucG5n.png" loading="eager" style="position:absolute;left:-40px;top:103px;width:845px;height:707px;object-fit:contain;filter:sepia(.26) contrast(1.04) drop-shadow(32px 23px 19px #281b126e)">
+<div class="detail-paper"><div class="detail-kicker">STUDENT 01 / SCULPTURE</div><h2>Student<br>Profile.</h2><div class="detail-rule"></div><h3>김서연　/　작가 소개</h3><p>시선이 머무는 순간,<br>작품은 또 다른 이야기를 시작합니다.<br><br>가상의 전시 공간에서<br>각자의 감각과 세계를 만나보세요.</p><div class="detail-cta">작가의 작품 더 보기　 ↗</div></div>
+<div class="detail-next">‹ &nbsp; PREVIOUS ARTIST <span> NEXT ARTIST &nbsp; ›</span></div><div class="footline"><span>2026 · VR GRADUATION EXHIBITION</span><span>프레임을 넘어, 우리를 만나다</span><span>08 / 08</span></div>
+</section>
+</div></main>
+<div id="assetQA" style="position:fixed;z-index:999999;bottom:20px;left:22px;background:#fff;color:#333;font:14px monospace;padding:12px;display:none"></div>
+<script type="module">
+const imgs=[...document.querySelectorAll('img.environment,img.portal-photo')];
+window.__assetsReport={total:imgs.length,good:[],bad:[]};
+await Promise.all(imgs.map(img=>new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true; const kind=img.naturalWidth>0?'good':'bad';window.__assetsReport[kind].push({src:img.src.slice(0,170),width:img.naturalWidth,height:img.naturalHeight});resolve();};img.addEventListener('load',finish,{once:true});img.addEventListener('error',finish,{once:true});if(img.complete)finish();setTimeout(finish,12000)})));
+window.__photosLoaded=true;
+if(new URLSearchParams(location.search).has('qa')){const info=document.querySelector('#assetQA');info.style.display='block';info.textContent='3D photos: '+JSON.stringify(window.__assetsReport);}
+</script><script type="module">
+const statueNodes=[...document.querySelectorAll('img[data-sculpture]')];
+const uniqueSourceURLs=[...new Set(statueNodes.map(img=>img.getAttribute('src')))];
+const diagnostic=document.querySelector('#assetQA');
+function info(text){window.__segText=text;if(new URLSearchParams(location.search).has('qa')){diagnostic.style.display='block';diagnostic.textContent=text;}}
+if(!window.__segProgress)window.__segProgress=[];
+try{
+ info('AI marble segmentation loading...');
+ const toolkit=await import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm');
+ const remove=toolkit.removeBackground||toolkit.default;
+ for(let i=0;i<uniqueSourceURLs.length;i++){
+   info('AI sculpture cutout '+(i+1)+'/'+uniqueSourceURLs.length);
+   const original=uniqueSourceURLs[i];
+   const b=await remove(original,{model:'isnet',output:{format:'image/png'}});
+   const bitmap=await createImageBitmap(b);
+   const c=document.createElement('canvas');c.width=bitmap.width;c.height=bitmap.height;
+   const context=c.getContext('2d',{willReadFrequently:true});context.drawImage(bitmap,0,0);bitmap.close();
+   const pixels=context.getImageData(0,0,c.width,c.height).data;
+   let transparent=0,solid=0,mid=0;
+   for(let j=3;j<pixels.length;j+=4){if(pixels[j]<10)transparent++;else if(pixels[j]>180)solid++;else mid++;}
+   const total=pixels.length/4;
+   if(transparent<total*.02 || solid<total*.035)throw Error('Invalid original statue cutout '+(i+1));
+   const alphaWebp=c.toDataURL('image/webp',0.95);
+   const targets=statueNodes.filter(im=>im.getAttribute('src')===original);
+   targets.forEach(im=>{im.src=alphaWebp;im.setAttribute('data-true-cutout','yes');});
+   window.__segProgress.push({image:i+1,items:targets.length,transparentPct:Math.round(100*transparent/total),softEdgePct:Math.round(100*mid/total),imgW:c.width,imgH:c.height,success:true});
+ }
+ if(window.__segProgress.reduce((a,o)=>a+o.items,0)!==statueNodes.length)throw Error('Statue count mismatch');
+ window.__allScenesReady=true;
+ document.documentElement.dataset.threeDReady='true';
+ info('SUCCESS: '+statueNodes.length+' clean sculptures in 3D galleries; '+JSON.stringify(window.__segProgress));
+ if(location.hash.includes('figmacapture=')){
+   const official=document.createElement('script');
+   official.src='https://mcp.figma.com/mcp/html-to-design/capture.js';
+   official.async=true;
+   document.head.appendChild(official);
+ }
+}catch(e){window.__segError=String(e);info('ERROR: '+String(e));}
+</script></body></html>
